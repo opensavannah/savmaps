@@ -16,7 +16,9 @@ No special technology skills will be needed to participate. As long as you can e
 
 This repository is a work-in-progress that contains all code for the 'SavMaps' app being developed Aug. 9, 2017 by Open Savannah.
 
-The workbook that populates the map can be freely edited [here](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing).
+The workbook that populates the map can be freely edited [here](https://docs.google.com/spreadsheets/d/15TEKVg5rdZM6ih8GpVe9vDlwO-kwMpEUtZPL7u_rcDw/edit#gid=27956486)
+
+ [Old spreadsheet](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing).
 
 The worksheet covering food insecurity has been split off and can be found [here](https://docs.google.com/spreadsheets/d/1QW5MPrxZmYgXamidzZIejWJYprYYo3D5uifSf1kr2-E/edit?ts=598b9990#gid=0). Request edit rights through [Carl](mailto:carl@carlvlewis.net) or [Roy](mailto:roy.e.mosby@gmail.com).
 
