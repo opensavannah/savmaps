@@ -11,12 +11,6 @@ We'll be partnering with Coastal Georgia Indicators Coalition to build an intera
 ## What skills do I need?
 No special technology skills will be needed to participate. As long as you can enter data into a spreadsheet, you'll be able to contribute to the project in a meaningful and impactful way. We'll need a mix of designers, data people, GIS types, a couple of JavaScript developers, and plenty of creative problem-solvers, but, most importantly, we'll need community members with locality knowledge from across the area to make the project a success. All contributors will be credited for their work by having their names listed on the landing page for the web app.
 
-## Will there be food?
-As usual, we'll have Mellow Mushroom, sodas, beer and other snacks to keep us fueled throughout the evening. Please direct any special dietary needs you may have (other than vegetarianism) to yall@opensavannah.org as soon as possible.
-
-*Addendum: We're currently accepting applications of interest to serve as the Project Lead and/or Deputy Project Lead and/or Project Contributors for SavMaps. If interested in taking on a leadership role for this project, please fill out the quick form here.*
-
----
 
 # REPOSITORY NOTES
 
@@ -25,3 +19,12 @@ This repository is a work-in-progress that contains all code for the 'SavMaps' a
 The workbook that populates the map can be freely edited [here](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing).
 
 The worksheet covering food insecurity has been split off and can be found [here](https://docs.google.com/spreadsheets/d/1QW5MPrxZmYgXamidzZIejWJYprYYo3D5uifSf1kr2-E/edit?ts=598b9990#gid=0). Request edit rights through [Carl](mailto:carl@carlvlewis.net) or [Roy](mailto:roy.e.mosby@gmail.com).
+
+## Categories *WiP*
+
+| Food Insecurity | Educational and youth services | Financial and employment | Health | Housing | Museums |
+|:--|:--|:--|:--|:--|:--|
+| Food Bank |  |  |  |  |  |
+| Community garden |  |  |  |  |  |
+| Food delivery |  |  |  |  |  |
+| Pantry |  |  |  |  |  |
