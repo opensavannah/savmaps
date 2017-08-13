@@ -1,6 +1,6 @@
 # SavMaps
 
-SavMaps is the working title for a interactive map of resources available to those residing in Savannah. Started Aug. 9th, 2017, at [Open Savannah](http://opensavannah.org)'s [Community Idea Launchpad](https://www.meetup.com/OpenSavannah/events/241867891/), the SavMaps project is in its development phase, timeline to be determined. It utilizes [Leaflet](https://github.com/Leaflet/Leaflet), [Tabletop.js](https://github.com/jsoma/tabletop), and [Google Sheets](https://www.google.com/sheets/about/).
+SavMaps is the working title for a interactive directory and map of resources available to those residing in Savannah. Started Aug. 9th, 2017, at [Open Savannah](http://opensavannah.org)'s [Community Idea Launchpad](https://www.meetup.com/OpenSavannah/events/241867891/), the SavMaps project is in its development phase, timeline to be determined. It utilizes [Leaflet](https://github.com/Leaflet/Leaflet), [Tabletop.js](https://github.com/jsoma/tabletop), and [Google Sheets](https://www.google.com/sheets/about/).
 
 ---
 ## About the project
@@ -13,7 +13,7 @@ We'll be partnering with [Coastal Georgia Indicators Coalition](http://www.coast
 
 ### What skills do I need to contribute?
 
-*All that one needs to be able to do is enter data into a spreadsheet to contribute to the project in a meaningful and impactful way.*
+*All that one needs to be able to do is to access and enter data into a spreadsheet to contribute to the project in a meaningful and impactful way.*
 
 The full project will also require a mix of designers, data people, GIS types, a couple of JavaScript developers, and plenty of creative problem-solvers. Most importantly, we'll need community members with locality knowledge from across the area to make the project a success. All contributors will be credited for their work by having their names listed on the landing page for the web app.
 
