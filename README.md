@@ -45,4 +45,4 @@ The worksheet covering food insecurity has been split off and can be found [here
 [View old spreadsheet](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing). 
 [View SavBook data for reference](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing).
 
-*Consider following the openeligibility.org [taxonomy](http://openeligibility) instead?*
+*Consider following the openeligibility.org [taxonomy](https://github.com/opensavannah/openeligibility) instead?*
