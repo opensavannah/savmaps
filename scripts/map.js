@@ -609,7 +609,7 @@ $(window).on('load', function() {
       polygonSheets++;
     }
 
-    document.title = getSetting('_mapTitle');
+    document.title = getSetting('SavMaps - Savannah-Chatham Social Services');
     addBaseMap();
 
     // Add point markers to the map
