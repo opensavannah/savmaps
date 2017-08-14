@@ -41,4 +41,4 @@ The worksheet covering food insecurity has been split off and can be found [here
 | Special Interest Groups | School-Food Distribution | Adoption and Foster Care | Government Benefits | Free Tutoring |  |  |
 |  | Nutrition Education | Exercise and Fitness Programs |  |  |  |  |
 
-[Old spreadsheet](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing).
+[Old spreadsheet](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing). *Consider following the openeligibility.org [taxonomy](http://openeligibility) instead?*
