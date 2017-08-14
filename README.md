@@ -23,7 +23,7 @@ The repository that houses all of the resource information is a Google Sheet to 
 
 Information gathered there will be ported over to the SavMaps on a rolling basis by the project maintainer. They will verify the accuracy of the resource, provide a latitude/logitude and fill in any missing information.
 
-The workbook that populates the map can be freely edited [here](https://docs.google.com/spreadsheets/d/15TEKVg5rdZM6ih8GpVe9vDlwO-kwMpEUtZPL7u_rcDw/edit#gid=27956486)
+[This Google workbook that populates the map can be freely edited](https://docs.google.com/spreadsheets/d/15TEKVg5rdZM6ih8GpVe9vDlwO-kwMpEUtZPL7u_rcDw/edit#gid=27956486)
 
 
 The worksheet covering food insecurity has been split off and can be found [here](https://docs.google.com/spreadsheets/d/1QW5MPrxZmYgXamidzZIejWJYprYYo3D5uifSf1kr2-E/edit?ts=598b9990#gid=0). Request edit rights through [Carl](mailto:carl@carlvlewis.net) or [Roy](mailto:roy.e.mosby@gmail.com).
@@ -41,4 +41,7 @@ The worksheet covering food insecurity has been split off and can be found [here
 | Special Interest Groups | School-Food Distribution | Adoption and Foster Care | Government Benefits | Free Tutoring |  |  |
 |  | Nutrition Education | Exercise and Fitness Programs |  |  |  |  |
 
-[Old spreadsheet](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing). *Consider following the openeligibility.org [taxonomy](http://openeligibility) instead?*
+[View old spreadsheet](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing). 
+[View SavBook data for reference](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing).
+
+*Consider following the openeligibility.org [taxonomy](http://openeligibility) instead?*
