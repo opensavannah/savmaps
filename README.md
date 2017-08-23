@@ -30,17 +30,9 @@ Information gathered there will be ported over to the SavMaps on a rolling basis
 The worksheet covering food insecurity has been split off and can be found [here](https://docs.google.com/spreadsheets/d/1QW5MPrxZmYgXamidzZIejWJYprYYo3D5uifSf1kr2-E/edit?ts=598b9990#gid=0). Request edit rights through [Carl](mailto:carl@carlvlewis.net) or [Roy](mailto:roy.e.mosby@gmail.com).
 
 ## Categories
-*Suggest additional categories through opening an [issue](https://github.com/opensavannah/savmaps/issues).
+*Suggest additional categories through opening an [issue](https://github.com/opensavannah/savmaps/issues).*
 
-| Cultural Services | Food Insecurity Resources | Health Services | Financial Assistance | Educational/Youth Services | Housing Services | Mobility |
-|:--|:--|:--|:--|:--|:--|:--|
-| Galleries & Museums | Homeless Meal Outreach | Chatham Health Departments | Employment & Training Assistance | Childcare  | Homeless Shelters | Transport services |
-| Entrepreneurial Resources | Food Pantries | Free Health Clinics | Free Income Tax Assistance | After-School Programs | Day Shelters | Wheel chairs |
-| Museums | Community Gardens | Addiction & Recovery | Transportation Assistance | Skills and Training | Public Housing | Public transport |
-| Parks & Recreation | Produce Stands | Women’s Health Services | Advocacy and Legal Aid | Preschool | Veterans Housing |  |
-| Community Centers | SNAP Retailers | Free Counseling Services | Financial Education | K-12 Schools  | Short-Term Housing |  |
-| Special Interest Groups | School-Food Distribution | Adoption and Foster Care | Government Benefits | Free Tutoring |  |  |
-|  | Nutrition Education | Exercise and Fitness Programs |  |  |  |  |
+This project uses the [openeligibility](https://about.auntbertha.com/openeligibility) taxonomy to define the categories that are applied to each of the resources. It is compatable with the [Human Services Data Specification](https://github.com/openreferral/specification) (HSDS) and by extension Code for America's [Ohana projects](https://github.com/search?q=org%3Acodeforamerica+ohana).
 
 [View old spreadsheet](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing). 
 [View SavBook data for reference](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing).
