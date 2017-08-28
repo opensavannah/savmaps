@@ -32,11 +32,10 @@ The worksheet covering food insecurity has been split off and can be found [here
 ## Categories
 *Suggest additional categories through opening an [issue](https://github.com/opensavannah/savmaps/issues).*
 
-This project uses the [openeligibility](https://about.auntbertha.com/openeligibility) taxonomy to define the categories that are applied to each of the resources. It is compatable with the [Human Services Data Specification](https://github.com/openreferral/specification) (HSDS) and by extension Code for America's [Ohana projects](https://github.com/search?q=org%3Acodeforamerica+ohana).
+This project uses the [openeligibility](https://about.auntbertha.com/openeligibility) taxonomy to define the categories that are applied to each of the resources. It is compatable with the [Human Services Data Specification](https://github.com/openreferral/specification) (HSDS) and Code for America's [Ohana projects](https://github.com/search?q=org%3Acodeforamerica+ohana). SavMaps extends __openeligibility__ by including two additional categories: __cultural__ and __civic__.
 
 ---
 
 [View old spreadsheet](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing). 
 [View SavBook data for reference](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing).
 
-*Consider following the openeligibility.org [taxonomy](https://github.com/opensavannah/openeligibility) instead?*
