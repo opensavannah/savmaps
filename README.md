@@ -34,7 +34,32 @@ The worksheet covering food insecurity has been split off and can be found [here
 
 This project uses the [openeligibility](https://about.auntbertha.com/openeligibility) taxonomy to define the categories that are applied to each of the resources. It is compatable with the [Human Services Data Specification](https://github.com/openreferral/specification) (HSDS) and Code for America's [Ohana projects](https://github.com/search?q=org%3Acodeforamerica+ohana). SavMaps extends __openeligibility__ by including two additional categories: __cultural__ and __civic__.
 
----
+### Color coding
+
+|Color Name|Color|Hex|RGB|Resource|
+|-----|----------|---|---|--------|
+| Red | ![#f03c15](https://placehold.it/100x25/e6194b/000000?text=+) | #e6194b | (230, 25, 75) | Emergency |
+| Green | ![#3cb44b](https://placehold.it/100x25/3cb44b/000000?text=+) | #3cb44b | (60, 180, 75) | Money |
+| Yellow | ![#ffe119](https://placehold.it/100x25/ffe119/000000?text=+) | #ffe119 | (255, 225, 25) | Housing |
+| Blue | ![#0082c8](https://placehold.it/100x25/0082c8/000000?text=+) | #0082c8 | (0, 130, 200) | Goods |
+| Orange | ![#f58231](https://placehold.it/100x25/f58231/000000?text=+) | #f58231 | (245, 130, 48) | Transit |
+| Purple | ![#911eb4](https://placehold.it/100x25/911eb4/000000?text=+) | #911eb4 | (145, 30, 180) | Health |
+| Cyan | ![#46f0f0](https://placehold.it/100x25/46f0f0/000000?text=+) | #46f0f0 | (70, 240, 240) | Care |
+| Magenta | ![#f032e6](https://placehold.it/100x25/f032e6/000000?text=+) | #f032e6 | (240, 50, 230) | Education |
+| Lime | ![#d2f53c](https://placehold.it/100x25/d2f53c/000000?text=+) | #d2f53c | (210, 245, 60) | Unused |
+| Pink | ![#fabebe](https://placehold.it/100x25/fabebe/000000?text=+) | #fabebe | (250, 190, 190) | Unused |
+| Teal | ![#008080](https://placehold.it/100x25/008080/000000?text=+) | #008080 | (0, 128, 128) | Work |
+| Lavender | ![#e6beff](https://placehold.it/100x25/e6beff/000000?text=+) | #e6beff | (230, 190, 255) | Unused |
+| Brown | ![#aa6e28](https://placehold.it/100x25/aa6e28/000000?text=+) | #aa6e28 | (170, 110, 40) | Legal |
+| Beige | ![#fffac8](https://placehold.it/100x25/fffac8/000000?text=+) | #fffac8 | (255, 250, 200) | Unused |
+| Maroon | ![#800000](https://placehold.it/100x25/800000/000000?text=+) | #800000 | (128, 0, 0) | Cultural |
+| Mint | ![#aaffc3](https://placehold.it/100x25/aaffc3/000000?text=+) | #aaffc3 | (170, 255, 195) | Unused |
+| Olive | ![#808000](https://placehold.it/100x25/808000/000000?text=+) | #808000 | (128, 128, 0) | Food |
+| Coral | ![#ffd8b1](https://placehold.it/100x25/ffd8b1/000000?text=+) | #ffd8b1 | (255, 215, 180) | Unused |
+| Navy | ![#000080](https://placehold.it/100x25/000080/000000?text=+) | #000080 | (0, 0, 128) | Civic |
+| Grey | ![#808080](https://placehold.it/100x25/808080/000000?text=+) | #808080 | (128, 128, 128) | Unused |
+| White | ![#FFFFFF](https://placehold.it/100x25/FFFFFF/000000?text=+) | #FFFFFF | (255, 255, 255) | Reserved for icon color |
+| Black | ![#000000](https://placehold.it/100x25/000000/000000?text=+) | #000000 | (0, 0, 0) | Reserved for icon color |
 
 [View old spreadsheet](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing). 
 [View SavBook data for reference](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing).
