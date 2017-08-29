@@ -1,4 +1,4 @@
-![](https://cvlassets.s3.amazonaws.com/savmaps.png)
+![SavMaps logo](https://cvlassets.s3.amazonaws.com/savmaps.png)
 # SavMaps.io
 
 SavMaps is the working title for a interactive map of resources available to those residing in Savannah. Started Aug. 9th, 2017, at [Open Savannah](http://opensavannah.org)'s [Community Idea Launchpad](https://www.meetup.com/OpenSavannah/events/241867891/), the SavMaps project is in its development phase, timeline to be determined. It utilizes [Leaflet](https://github.com/Leaflet/Leaflet), [Tabletop.js](https://github.com/jsoma/tabletop), and [Google Sheets](https://www.google.com/sheets/about/).
@@ -18,7 +18,7 @@ We'll be partnering with [Coastal Georgia Indicators Coalition](http://www.coast
 
 The full project will also require a mix of designers, data people, GIS types, a couple of JavaScript developers, and plenty of creative problem-solvers. Most importantly, we'll need community members with locality knowledge from across the area to make the project a success. All contributors will be credited for their work by having their names listed on the landing page for the web app.
 
-## REPOSITORY NOTES
+## Repository Notes
 
 The repository that houses all of the resource information is a Google Sheet to allow easy entry of new resources. At minimum, a resource's name, its category, and its address is needed.
 
@@ -27,12 +27,12 @@ Information gathered there will be ported over to the SavMaps on a rolling basis
 [This Google workbook that populates the map can be freely edited](https://docs.google.com/spreadsheets/d/15TEKVg5rdZM6ih8GpVe9vDlwO-kwMpEUtZPL7u_rcDw/edit#gid=27956486)
 
 
-The worksheet covering food insecurity has been split off and can be found [here](https://docs.google.com/spreadsheets/d/1QW5MPrxZmYgXamidzZIejWJYprYYo3D5uifSf1kr2-E/edit?ts=598b9990#gid=0). Request edit rights through [Carl](mailto:carl@carlvlewis.net) or [Roy](mailto:roy.e.mosby@gmail.com).
-
 ## Categories
 *Suggest additional categories through opening an [issue](https://github.com/opensavannah/savmaps/issues).*
 
-This project uses the [openeligibility](https://about.auntbertha.com/openeligibility) taxonomy to define the categories that are applied to each of the resources. It is compatable with the [Human Services Data Specification](https://github.com/openreferral/specification) (HSDS) and Code for America's [Ohana projects](https://github.com/search?q=org%3Acodeforamerica+ohana). SavMaps extends __openeligibility__ by including two additional categories: __cultural__ and __civic__.
+This project uses the [openeligibility](https://about.auntbertha.com/openeligibility) taxonomy to define the categories that are applied to each of the resources. It is compatable with the [Human Services Data Specification](https://github.com/openreferral/specification) (HSDS) and Code for America's [Ohana projects](https://github.com/search?q=org%3Acodeforamerica+ohana). 
+
+SavMaps extends __openeligibility__ by including two additional categories: __cultural__ and __civic__.
 
 ### Color coding
 
@@ -60,6 +60,10 @@ This project uses the [openeligibility](https://about.auntbertha.com/openeligibi
 | Grey | ![#808080](https://placehold.it/100x25/808080/000000?text=+) | #808080 | (128, 128, 128) | Unused |
 | White | ![#FFFFFF](https://placehold.it/100x25/FFFFFF/000000?text=+) | #FFFFFF | (255, 255, 255) | Reserved for icon color |
 | Black | ![#000000](https://placehold.it/100x25/000000/000000?text=+) | #000000 | (0, 0, 0) | Reserved for icon color |
+
+_based off of Sasha Trubetskoy's [list of distinct colors](https://sashat.me/2017/01/11/list-of-20-simple-distinct-colors/)._
+
+---
 
 [View old spreadsheet](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing). 
 [View SavBook data for reference](https://docs.google.com/spreadsheets/d/1_Ep9pCtsdoIiavyGkzPNJ4Vb7JwsU744l8Yax1_Az9k/edit?usp=sharing).
