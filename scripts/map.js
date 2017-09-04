@@ -154,7 +154,7 @@ $(window).on('load', function() {
         multilayerClusterSupport = L.markerClusterGroup.layerSupport();
         multilayerClusterSupport.addTo(map);
 
-        for (i in layers) {
+        for (var i in layers) {
           multilayerClusterSupport.checkIn(layers[i]);
           layers[i].addTo(map);
         }
@@ -177,6 +177,7 @@ $(window).on('load', function() {
       }
     }
 
+    // Attaches legend title to points legend
     $('#points-legend').prepend('<h6 class="pointer">' + getSetting('_pointsLegendTitle') + '</h6>');
     if (getSetting('_pointsLegendIcon') != '') {
       $('#points-legend h6').prepend('<span class="legend-icon"><i class="fa '
@@ -212,7 +213,7 @@ $(window).on('load', function() {
       // Clear table data and add only visible markers to it
       function updateTable() {
         var pointsVisible = [];
-        for (i in points) {
+        for (var i in points) {
           if (map.hasLayer(layers[points[i].Group]) &&
               map.getBounds().contains(L.latLng(points[i].Latitude, points[i].Longitude))) {
             pointsVisible.push(points[i]);
@@ -229,9 +230,9 @@ $(window).on('load', function() {
       // Convert Leaflet marker objects into DataTable array
       function pointsToTableData(ms) {
         var data = [];
-        for (i in ms) {
+        for (var i in ms) {
           var a = [];
-          for (j in columns) {
+          for (var j in columns) {
             a.push(ms[i][columns[j]]);
           }
           data.push(a);
@@ -242,7 +243,7 @@ $(window).on('load', function() {
       // Transform columns array into array of title objects
       function generateColumnsArray() {
         var c = [];
-        for (i in columns) {
+        for (var i in columns) {
           c.push({title: columns[i]});
         }
         return c;
@@ -284,7 +285,7 @@ $(window).on('load', function() {
       // Pre-process popup properties to be used in onEachFeature below
       polygon = p;
       var popupProperties = getPolygonSetting(p, '_popupProp').split(';');
-      for (i in popupProperties) { popupProperties[i] = popupProperties[i].split(','); }
+      for (var i in popupProperties) { popupProperties[i] = popupProperties[i].split(','); }
       allPopupProperties.push(popupProperties);
 
       // Load geojson
@@ -314,7 +315,7 @@ $(window).on('load', function() {
       colors = [];
 
       polygonLayers = getPolygonSetting(p, '_polygonLayers').split(';');
-      for (i in polygonLayers) { polygonLayers[i] = polygonLayers[i].split(','); }
+      for (var i in polygonLayers) { polygonLayers[i] = polygonLayers[i].split(','); }
 
       divisors = getPolygonSetting(p, '_bucketDivisors').split(';');
 
@@ -324,7 +325,7 @@ $(window).on('load', function() {
       }
 
       colors = getPolygonSetting(p, '_bucketColors').split(';');
-      for (i = 0; i < divisors.length; i++) {
+      for (var i = 0; i < divisors.length; i++) {
         divisors[i] = divisors[i].split(',');
         for (j = 0; j < divisors[i].length; j++) {
           divisors[i][j] = divisors[i][j].trim();
@@ -336,7 +337,7 @@ $(window).on('load', function() {
         }
       }
 
-      for (i = 0; i < divisors.length; i++) {
+      for (var i = 0; i < divisors.length; i++) {
         if (divisors[i].length == 0) {
           alert('Error in Polygons: The number of divisors should be > 0');
           return; // Stop here
@@ -353,7 +354,7 @@ $(window).on('load', function() {
       }
 
       // For each set of divisors, decide whether textual or numerical
-      for (i = 0; i < divisors.length; i++) {
+      for (var i = 0; i < divisors.length; i++) {
         if (!isNaN(parseFloat(divisors[i][0].trim()))) {
           isNumerical[i] = true;
           for (j = 0; j < divisors[i].length; j++) {
@@ -376,7 +377,7 @@ $(window).on('load', function() {
         var content = '<h6 class="pointer">' + getPolygonSetting(p, '_polygonsLegendTitle') + '</h6>';
         content += '<form>';
 
-        for (i in polygonLayers) {
+        for (var i in polygonLayers) {
           var layer = polygonLayers[i][1]
             ? polygonLayers[i][1].trim()
             : polygonLayers[i][0].trim();
@@ -402,7 +403,7 @@ $(window).on('load', function() {
     }
 
     // Generate polygon labels layers
-    for (i in allTextLabels) {
+    for (var i in allTextLabels) {
       var g = L.featureGroup(allTextLabels[i]);
       allTextLabelsLayers.push(g);
     }
@@ -524,12 +525,11 @@ $(window).on('load', function() {
     var div = allDivisors[polygon][layer];
 
     var i;
-
     if (num) {
       i = col.length - 1;
       while (d < div[i]) i -= 1;
     } else {
-      for (i = 0; i < col.length - 1; i++) {
+      for (var i = 0; i < col.length - 1; i++) {
         if (d == div[i]) break;
       }
     }
@@ -551,7 +551,7 @@ $(window).on('load', function() {
     var info = '';
     props = allPopupProperties[polygon];
 
-    for (i in props) {
+    for (var i in props) {
       if (props[i] == '') { continue; }
 
       info += props[i][1]
@@ -693,7 +693,7 @@ $(window).on('load', function() {
         $('.ladder h6').append('<span class="legend-arrow"><i class="fa fa-chevron-down"></i></span>');
         $('.ladder h6').addClass('minimize');
 
-        for (i in allPolygonLegends) {
+        for (var i in allPolygonLegends) {
           if (getPolygonSetting(i, '_polygonsLegendIcon') != '') {
             $('.polygons-legend' + i + ' h6').prepend(
               '<span class="legend-icon"><i class="fa ' + getPolygonSetting(i, '_polygonsLegendIcon') + '"></i></span>');
@@ -724,7 +724,7 @@ $(window).on('load', function() {
         // Open intro popup window in the center of the map
         if (getSetting('_introPopupText') != '') {
           initIntroPopup(getSetting('_introPopupText'), map.getCenter());
-        };
+        }
 
         togglePolygonLabels();
       } else {
@@ -770,18 +770,18 @@ $(window).on('load', function() {
       collapsed: false,
     });
 
-    for (i = 0; i < p.length; i++) {
+    for (var i = 0; i < p.length; i++) {
       $.getJSON(p[i]['GeoJSON URL'], function(index) {
         return function(data) {
           latlng = [];
 
-          for (l in data['features']) {
+          for (var l in data['features']) {
             latlng.push(data['features'][l].geometry.coordinates);
           }
 
           // Reverse [lon, lat] to [lat, lon] for each point
-          for (l in latlng) {
-            for (c in latlng[l]) {
+          for (var l in latlng) {
+            for (var c in latlng[l]) {
               latlng[l][c].reverse();
               // If coords contained 'z' (altitude), remove it
               if (latlng[l][c].length == 3) {
@@ -859,7 +859,7 @@ $(window).on('load', function() {
    * Turns on and off polygon text labels depending on current map zoom
    */
   function togglePolygonLabels() {
-    for (i in allTextLabels) {
+    for (var i in allTextLabels) {
       if (map.getZoom() <= tryPolygonSetting(i, '_polygonLabelZoomLevel', 9)) {
         $('.polygon-label' + i).hide();
       } else {
@@ -1001,5 +1001,4 @@ $(window).on('load', function() {
       }
       return val;
   }
-
 });
