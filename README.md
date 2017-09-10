@@ -30,7 +30,7 @@ Information gathered there will be ported over to the SavMaps on a rolling basis
 ## Categories
 *Suggest additional categories through opening an [issue](https://github.com/opensavannah/savmaps/issues).*
 
-This project uses the [openeligibility](https://about.auntbertha.com/openeligibility) taxonomy to define the categories that are applied to each of the resources. It is compatable with the [Human Services Data Specification](https://github.com/openreferral/specification) (HSDS) and Code for America's [Ohana projects](https://github.com/search?q=org%3Acodeforamerica+ohana). 
+This project uses the [openeligibility](https://about.auntbertha.com/openeligibility) taxonomy to define the categories that are applied to each of the resources. It is compatable with the [Human Services Data Specification](https://github.com/openreferral/specification), [HSDS v1.1 readthedocs](https://openreferral.readthedocs.io/en/latest/), and Code for America's [Ohana projects](https://github.com/search?q=org%3Acodeforamerica+ohana). 
 
 SavMaps extends __openeligibility__ by including two additional categories: __cultural__ and __civic__.
 
