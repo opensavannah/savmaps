@@ -1,4 +1,4 @@
-$(window).on('load', function() {
+$(window).on('load', function () {
   var documentSettings = {};
   var markerColors = [];
 
@@ -28,9 +28,12 @@ $(window).on('load', function() {
    * to specified (lat, lon) and zoom if all three are specified
    */
   function centerAndZoomMap(points) {
-    var lat = map.getCenter().lat, latSet = false;
-    var lon = map.getCenter().lng, lonSet = false;
-    var zoom = 12, zoomSet = false;
+    var lat = map.getCenter().lat,
+      latSet = false;
+    var lon = map.getCenter().lng,
+      lonSet = false;
+    var zoom = 12,
+      zoomSet = false;
     var center;
 
     if (getSetting('_initLat') !== '') {
@@ -73,9 +76,9 @@ $(window).on('load', function() {
       var pointLayerNameFromSpreadsheet = points[i].Group;
       if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
         markerColors.push(
-          points[i]['Marker Icon'].indexOf('.') > 0
-          ? points[i]['Marker Icon']
-          : points[i]['Marker Color']
+          points[i]['Marker Icon'].indexOf('.') > 0 ?
+          points[i]['Marker Icon'] :
+          points[i]['Marker Color']
         );
         layerNamesFromSpreadsheet.push(pointLayerNameFromSpreadsheet);
       }
@@ -106,29 +109,31 @@ $(window).on('load', function() {
       // If icon contains '.', assume it's a path to a custom icon,
       // otherwise create a Font Awesome icon
       var iconSize = point['Custom Size'];
-      var size = (iconSize.indexOf('x') > 0)
-      ? [parseInt(iconSize.split('x')[0]), parseInt(iconSize.split('x')[1])]
-      : [32, 32];
+      var size = (iconSize.indexOf('x') > 0) ?
+        [parseInt(iconSize.split('x')[0]), parseInt(iconSize.split('x')[1])] :
+        [32, 32];
 
       var anchor = [size[0] / 2, size[1]];
 
-      var icon = (point['Marker Icon'].indexOf('.') > 0)
-        ? L.icon({
+      var icon = (point['Marker Icon'].indexOf('.') > 0) ?
+        L.icon({
           iconUrl: point['Marker Icon'],
           iconSize: size,
           iconAnchor: anchor
-        })
-        : createMarkerIcon(point['Marker Icon'],
+        }) :
+        createMarkerIcon(point['Marker Icon'],
           'fa',
           point['Marker Color'].toLowerCase(),
           point['Icon Color']
         );
 
       if (point.Latitude !== '' && point.Longitude !== '') {
-        var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
+        var marker = L.marker([point.Latitude, point.Longitude], {
+            icon: icon
+          })
           .bindPopup("<b>" + point['Name'] + '</b><br>' +
-          (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
-          point['Description']);
+            (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
+            point['Description']);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
@@ -144,9 +149,9 @@ $(window).on('load', function() {
     // if layers.length === 0, add points to map instead of layer
     if (layers === undefined || layers.length === 0) {
       map.addLayer(
-        clusters
-        ? L.markerClusterGroup().addLayer(group).addTo(map)
-        : group
+        clusters ?
+        L.markerClusterGroup().addLayer(group).addTo(map) :
+        group
       );
     } else {
       if (clusters) {
@@ -160,9 +165,9 @@ $(window).on('load', function() {
         }
       }
 
-      var pos = (getSetting('_pointsLegendPos') == 'off')
-        ? 'topleft'
-        : getSetting('_pointsLegendPos');
+      var pos = (getSetting('_pointsLegendPos') == 'off') ?
+        'topleft' :
+        getSetting('_pointsLegendPos');
 
       var pointsLegend = L.control.layers(null, layers, {
         collapsed: false,
@@ -180,19 +185,21 @@ $(window).on('load', function() {
     // Attaches legend title to points legend
     $('#points-legend').prepend('<h6 class="pointer">' + getSetting('_pointsLegendTitle') + '</h6>');
     if (getSetting('_pointsLegendIcon') != '') {
-      $('#points-legend h6').prepend('<span class="legend-icon"><i class="fa '
-        + getSetting('_pointsLegendIcon') + '"></i></span>');
+      $('#points-legend h6').prepend('<span class="legend-icon"><i class="fa ' +
+        getSetting('_pointsLegendIcon') + '"></i></span>');
     }
 
     var displayTable = getSetting('_displayTable') == 'on' ? true : false;
 
     // Display table with active points if specified
     var columns = getSetting('_tableColumns').split(',')
-                  .map(Function.prototype.call, String.prototype.trim);
+      .map(Function.prototype.call, String.prototype.trim);
 
     if (displayTable && columns.length > 1) {
       tableHeight = trySetting('_tableHeight', 40);
-      if (tableHeight < 10 || tableHeight > 90) {tableHeight = 40;}
+      if (tableHeight < 10 || tableHeight > 90) {
+        tableHeight = 40;
+      }
       $('#map').css('height', (100 - tableHeight) + 'vh');
       map.invalidateSize();
 
@@ -215,7 +222,7 @@ $(window).on('load', function() {
         var pointsVisible = [];
         for (var i in points) {
           if (map.hasLayer(layers[points[i].Group]) &&
-              map.getBounds().contains(L.latLng(points[i].Latitude, points[i].Longitude))) {
+            map.getBounds().contains(L.latLng(points[i].Latitude, points[i].Longitude))) {
             pointsVisible.push(points[i]);
           }
         }
@@ -244,7 +251,9 @@ $(window).on('load', function() {
       function generateColumnsArray() {
         var c = [];
         for (var i in columns) {
-          c.push({title: columns[i]});
+          c.push({
+            title: columns[i]
+          });
         }
         return c;
       }
@@ -285,21 +294,23 @@ $(window).on('load', function() {
       // Pre-process popup properties to be used in onEachFeature below
       polygon = p;
       var popupProperties = getPolygonSetting(p, '_popupProp').split(';');
-      for (var i in popupProperties) { popupProperties[i] = popupProperties[i].split(','); }
+      for (var i in popupProperties) {
+        popupProperties[i] = popupProperties[i].split(',');
+      }
       allPopupProperties.push(popupProperties);
 
       // Load geojson
-      $.getJSON(getPolygonSetting(p, '_polygonsGeojsonURL'), function(data) {
-          geoJsonLayer = L.geoJson(data, {
-            onEachFeature: onEachFeature,
-            pointToLayer: function(feature, latlng) {
-              return L.circleMarker(latlng, {
-                className: 'geojson-point-marker'
-              });
-            }
-          });
-          allGeojsons.push(geoJsonLayer);
-          loadAllGeojsons(p+1);
+      $.getJSON(getPolygonSetting(p, '_polygonsGeojsonURL'), function (data) {
+        geoJsonLayer = L.geoJson(data, {
+          onEachFeature: onEachFeature,
+          pointToLayer: function (feature, latlng) {
+            return L.circleMarker(latlng, {
+              className: 'geojson-point-marker'
+            });
+          }
+        });
+        allGeojsons.push(geoJsonLayer);
+        loadAllGeojsons(p + 1);
       });
     } else {
       processAllPolygons();
@@ -307,7 +318,7 @@ $(window).on('load', function() {
   }
 
   function processAllPolygons() {
-    var p = 0;  // polygon sheet
+    var p = 0; // polygon sheet
 
     while (p < polygonSettings.length && getPolygonSetting(p, '_polygonsGeojsonURL')) {
       isNumerical = [];
@@ -315,7 +326,9 @@ $(window).on('load', function() {
       colors = [];
 
       polygonLayers = getPolygonSetting(p, '_polygonLayers').split(';');
-      for (var i in polygonLayers) { polygonLayers[i] = polygonLayers[i].split(','); }
+      for (var i in polygonLayers) {
+        polygonLayers[i] = polygonLayers[i].split(',');
+      }
 
       divisors = getPolygonSetting(p, '_bucketDivisors').split(';');
 
@@ -371,18 +384,20 @@ $(window).on('load', function() {
       allPolygonLayers.push(polygonLayers);
 
       var legendPos = tryPolygonSetting(p, '_polygonsLegendPosition', 'off');
-      polygonsLegend = L.control({position: (legendPos == 'off') ? 'topleft' : legendPos});
+      polygonsLegend = L.control({
+        position: (legendPos == 'off') ? 'topleft' : legendPos
+      });
 
-      polygonsLegend.onAdd = function(map) {
+      polygonsLegend.onAdd = function (map) {
         var content = '<h6 class="pointer">' + getPolygonSetting(p, '_polygonsLegendTitle') + '</h6>';
         content += '<form>';
 
         for (var i in polygonLayers) {
-          var layer = polygonLayers[i][1]
-            ? polygonLayers[i][1].trim()
-            : polygonLayers[i][0].trim();
+          var layer = polygonLayers[i][1] ?
+            polygonLayers[i][1].trim() :
+            polygonLayers[i][0].trim();
 
-            layer = (layer == '') ? 'On' : layer;
+          layer = (layer == '') ? 'On' : layer;
 
           content += '<label><input type="radio" name="prop" value="' + p + ';' + i + '"> ';
           content += layer + '</label><br>';
@@ -409,7 +424,7 @@ $(window).on('load', function() {
     }
 
     // This is triggered when user changes the radio button
-    $('.ladder input:radio[name="prop"]').change(function() {
+    $('.ladder input:radio[name="prop"]').change(function () {
       polygon = parseInt($(this).val().split(';')[0]);
       layer = parseInt($(this).val().split(';')[1]);
 
@@ -457,7 +472,11 @@ $(window).on('load', function() {
     // If no scale exists: hide the legend. Ugly temporary fix.
     // Can't use 'hide' because it is later toggled
     if (allDivisors[p][z] == '') {
-      $('.polygons-legend' + p).find('.polygons-legend-scale').css({'margin': '0px', 'padding': '0px', 'border': '0px solid'});
+      $('.polygons-legend' + p).find('.polygons-legend-scale').css({
+        'margin': '0px',
+        'padding': '0px',
+        'border': '0px solid'
+      });
       return;
     }
 
@@ -469,15 +488,15 @@ $(window).on('load', function() {
     for (var i = 0; i < allDivisors[p][z].length; i++) {
       isNum = allIsNumerical[p][z];
       from = allDivisors[p][z][i];
-      to = allDivisors[p][z][i+1];
+      to = allDivisors[p][z][i + 1];
 
       color = getColor(from);
       from = from ? comma(from) : from;
       to = to ? comma(to) : to;
 
       labels.push(
-        '<i style="background:' + color + '; opacity: '
-        + tryPolygonSetting(p, '_colorOpacity', '0.7') + '"></i> ' +
+        '<i style="background:' + color + '; opacity: ' +
+        tryPolygonSetting(p, '_colorOpacity', '0.7') + '"></i> ' +
         from + ((to && isNum) ? '&ndash;' + to : (isNum) ? '+' : ''));
     }
 
@@ -496,7 +515,7 @@ $(window).on('load', function() {
     var style = {};
 
     if (feature.geometry.type == 'Point') {
-      return {  // Point style
+      return { // Point style
         radius: 4,
         weight: 1,
         opacity: 1,
@@ -505,7 +524,7 @@ $(window).on('load', function() {
         fillColor: 'white'
       }
     } else {
-      return {  // Polygon and Polyline style
+      return { // Polygon and Polyline style
         weight: 2,
         opacity: 1,
         color: tryPolygonSetting(polygon, '_outlineColor', 'white'),
@@ -534,7 +553,9 @@ $(window).on('load', function() {
       }
     }
 
-    if (!col[i]) {i = 0}
+    if (!col[i]) {
+      i = 0
+    }
     return col[i];
   }
 
@@ -545,18 +566,20 @@ $(window).on('load', function() {
   function onEachFeature(feature, layer) {
     // Do not bind popups if 1. no popup properties specified and 2. display
     // images is turned off.
-    if (getPolygonSetting(polygon, '_popupProp') == ''
-     && getPolygonSetting(polygon, '_polygonDisplayImages') == 'off') return;
+    if (getPolygonSetting(polygon, '_popupProp') == '' &&
+      getPolygonSetting(polygon, '_polygonDisplayImages') == 'off') return;
 
     var info = '';
     props = allPopupProperties[polygon];
 
     for (var i in props) {
-      if (props[i] == '') { continue; }
+      if (props[i] == '') {
+        continue;
+      }
 
-      info += props[i][1]
-        ? props[i][1].trim()
-        : props[i][0].trim();
+      info += props[i][1] ?
+        props[i][1].trim() :
+        props[i][0].trim();
 
       var val = feature.properties[props[i][0].trim()];
       info += ': <b>' + (val ? comma(val) : val) + '</b><br>';
@@ -579,7 +602,9 @@ $(window).on('load', function() {
         })
       });
 
-      if (!allTextLabels[polygon]) {allTextLabels.push([]);}
+      if (!allTextLabels[polygon]) {
+        allTextLabels.push([]);
+      }
       allTextLabels[polygon].push(myTextLabel);
     }
   }
@@ -589,7 +614,7 @@ $(window).on('load', function() {
    * redrawn and thus get on top of polygons
    */
   function doubleClickPolylines() {
-    $('#polylines-legend form label input').each(function(i) {
+    $('#polylines-legend form label input').each(function (i) {
       $(this).click().click();
     });
   }
@@ -663,10 +688,12 @@ $(window).on('load', function() {
 
     // Add zoom control
     if (getSetting('_mapZoom') !== 'off') {
-      L.control.zoom({position: getSetting('_mapZoom')}).addTo(map);
+      L.control.zoom({
+        position: getSetting('_mapZoom')
+      }).addTo(map);
     }
 
-    map.on('zoomend', function() {
+    map.on('zoomend', function () {
       togglePolygonLabels();
     });
 
@@ -676,12 +703,12 @@ $(window).on('load', function() {
     changeAttribution();
 
     // Append icons to categories in markers legend
-    $('#points-legend form label span').each(function(i) {
-      var legendIcon = (markerColors[i].indexOf('.') > 0)
-        ? '<img src="' + markerColors[i] + '" class="markers-legend-icon">'
-        : '&nbsp;<i class="fa fa-map-marker" style="color: '
-          + markerColors[i]
-          + '"></i>';
+    $('#points-legend form label span').each(function (i) {
+      var legendIcon = (markerColors[i].indexOf('.') > 0) ?
+        '<img src="' + markerColors[i] + '" class="markers-legend-icon">' :
+        '&nbsp;<i class="fa fa-map-marker" style="color: ' +
+        markerColors[i] +
+        '"></i>';
       $(this).prepend(legendIcon);
     });
 
@@ -700,7 +727,7 @@ $(window).on('load', function() {
           }
         }
 
-        $('.ladder h6').click(function() {
+        $('.ladder h6').click(function () {
           if ($(this).hasClass('minimize')) {
             $('.ladder h6').addClass('minimize');
             $('.legend-arrow i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
@@ -750,7 +777,9 @@ $(window).on('load', function() {
         $('.div-center').append('<div class="map-title leaflet-bar leaflet-control leaflet-control-custom">' + title + subtitle + '</div>');
       }
 
-      $('.map-title h3').click(function() { location.reload(); });
+      $('.map-title h3').click(function () {
+        location.reload();
+      });
     }
   }
 
@@ -761,9 +790,9 @@ $(window).on('load', function() {
   function processPolylines(p) {
     if (!p || p.length == 0) return;
 
-    var pos = (getSetting('_polylinesLegendPos') == 'off')
-      ? 'topleft'
-      : getSetting('_polylinesLegendPos');
+    var pos = (getSetting('_polylinesLegendPos') == 'off') ?
+      'topleft' :
+      getSetting('_polylinesLegendPos');
 
     var polylinesLegend = L.control.layers(null, null, {
       position: pos,
@@ -771,8 +800,8 @@ $(window).on('load', function() {
     });
 
     for (var i = 0; i < p.length; i++) {
-      $.getJSON(p[i]['GeoJSON URL'], function(index) {
-        return function(data) {
+      $.getJSON(p[i]['GeoJSON URL'], function (index) {
+        return function (data) {
           latlng = [];
 
           for (var l in data['features']) {
@@ -800,8 +829,8 @@ $(window).on('load', function() {
           }
 
           polylinesLegend.addOverlay(line,
-            '<i class="color-line" style="background-color:' + p[index]['Color']
-            + '"></i> ' + p[index]['Display Name']);
+            '<i class="color-line" style="background-color:' + p[index]['Color'] +
+            '"></i> ' + p[index]['Display Name']);
 
           if (index == 0) {
             polylinesLegend._container.id = 'polylines-legend';
@@ -810,8 +839,8 @@ $(window).on('load', function() {
             if (getSetting('_polylinesLegendTitle') != '') {
               $('#polylines-legend').prepend('<h6 class="pointer">' + getSetting('_polylinesLegendTitle') + '</h6>');
               if (getSetting('_polylinesLegendIcon') != '') {
-                $('#polylines-legend h6').prepend('<span class="legend-icon"><i class="fa '
-                  + getSetting('_polylinesLegendIcon') + '"></i></span>');
+                $('#polylines-legend h6').prepend('<span class="legend-icon"><i class="fa ' +
+                  getSetting('_polylinesLegendIcon') + '"></i></span>');
               }
 
               // Add map title if set to be displayed in polylines legend
@@ -842,14 +871,16 @@ $(window).on('load', function() {
       $('body').append('<div id="mobile-intro-popup"><p>' + info +
         '</p><div id="mobile-intro-popup-close"><i class="fa fa-times"></i></div></div>');
 
-      $('#mobile-intro-popup-close').click(function() {
+      $('#mobile-intro-popup-close').click(function () {
         $("#mobile-intro-popup").hide();
       });
       return;
     }
 
     /* And this is a standard popup for bigger screens */
-    L.popup({className: 'intro-popup'})
+    L.popup({
+        className: 'intro-popup'
+      })
       .setLatLng(coordinates) // this needs to change
       .setContent(info)
       .openOn(map);
@@ -880,7 +911,9 @@ $(window).on('load', function() {
     var url = getSetting('_authorURL');
 
     if (name && url) {
-      if (url.indexOf('@') > 0) { url = 'mailto:' + url; }
+      if (url.indexOf('@') > 0) {
+        url = 'mailto:' + url;
+      }
       credit += ' by <a href="' + url + '">' + name + '</a> | ';
     } else if (name) {
       credit += ' by ' + name + ' | ';
@@ -932,42 +965,48 @@ $(window).on('load', function() {
    */
   function trySetting(s, def) {
     s = getSetting(s);
-    if (!s || s.trim() === '') { return def; }
+    if (!s || s.trim() === '') {
+      return def;
+    }
     return s;
   }
 
   function tryPolygonSetting(p, s, def) {
     s = getPolygonSetting(p, s);
-    if (!s || s.trim() === '') { return def; }
+    if (!s || s.trim() === '') {
+      return def;
+    }
     return s;
   }
 
   /**
    * Triggers the load of the spreadsheet and map creation
    */
-   var mapData;
+  var mapData;
 
-   $.ajax({
-       url:'csv/Options.csv',
-       type:'HEAD',
-       error: function() {
-         // Options.csv does not exist, so use Tabletop to fetch data from
-         // the Google sheet
-         mapData = Tabletop.init({
-           key: googleDocURL,
-           callback: function(data, mapData) { onMapDataLoad(); }
-         });
-       },
-       success: function() {
-         // Get all data from .csv files
-         mapData = Procsv;
-         mapData.load({
-           self: mapData,
-           tabs: ['Options', 'Points', 'Polygons', 'Polylines'],
-           callback: onMapDataLoad
-         });
-       }
-   });
+  $.ajax({
+    url: 'csv/Options.csv',
+    type: 'HEAD',
+    error: function () {
+      // Options.csv does not exist, so use Tabletop to fetch data from
+      // the Google sheet
+      mapData = Tabletop.init({
+        key: googleDocURL,
+        callback: function (data, mapData) {
+          onMapDataLoad();
+        }
+      });
+    },
+    success: function () {
+      // Get all data from .csv files
+      mapData = Procsv;
+      mapData.load({
+        self: mapData,
+        tabs: ['Options', 'Points', 'Polygons', 'Polylines'],
+        callback: onMapDataLoad
+      });
+    }
+  });
 
   /**
    * Reformulates documentSettings as a dictionary, e.g.
@@ -996,9 +1035,9 @@ $(window).on('load', function() {
   // Returns a string that contains digits of val split by comma evey 3 positions
   // Example: 12345678 -> "12,345,678"
   function comma(val) {
-      while (/(\d+)(\d{3})/.test(val.toString())) {
-          val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
-      }
-      return val;
+    while (/(\d+)(\d{3})/.test(val.toString())) {
+      val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+    }
+    return val;
   }
 });
