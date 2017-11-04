@@ -1,3 +1,13 @@
+/*
+
+A fast algorithm for finding polygon pole of inaccessibility, 
+the most distant internal point from the polygon outline 
+(not to be confused with centroid), implemented as a JavaScript library. 
+Useful for optimal placement of a text label on a polygon.
+https://github.com/mapbox/polylabel
+
+*/
+
 function TinyQueue(data, compare) {
     if (!(this instanceof TinyQueue)) return new TinyQueue(data, compare);
 
