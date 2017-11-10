@@ -151,7 +151,7 @@ form {
   }
 
   .leaflet-left .map-title {
-    width: 98%;
+    width: 50%;
   }
 }
 
@@ -258,7 +258,7 @@ select {
 }
 
 span.legend-arrow {
-  color: rgb(238, 238, 238);
+  color: rgb(100, 100, 100);
   position: absolute;
   right: 8px;
   top: 5px;
@@ -270,7 +270,7 @@ span.legend-icon {
 }
 
 .ladder {
-  width: 180px;
+  width: 110px;
   margin-top: 0 !important;
   overflow: hidden;
 }
